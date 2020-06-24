@@ -1,0 +1,17 @@
+resources/
+dist/
+node_modules/
+package-lock.json
+.eslintcache
+
+.DS_Store
+*.gif
+*.psd
+*.xlsx
+scratch
+*scratch*
+*template*
+README.template.md
+pattern-template.md
+pattern.md
+
