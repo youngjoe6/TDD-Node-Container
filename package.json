@@ -1,0 +1,57 @@
+{
+  "name": "tdd-node-containers",
+  "version": "1.0.0",
+  "description": "currency conversion",
+  "main": "jest.config.js",
+  "directories": {
+    "doc": "doc"
+  },
+  "scripts": {
+    "test": "jest",
+    "lint": "eslint --ext .js ./src",
+    "test:watch": "jest --watch",
+    "dev": "nodemon",
+    "start": "NODE_ENV=production node -r esm ./src/bin/www"
+  },
+  "repository": {
+    "type": "git",
+    "url": "TDD-Node-Containers"
+  },
+  "author": "Joseph Uchenna",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.10.3",
+    "@babel/plugin-transform-runtime": "^7.10.3",
+    "@babel/preset-env": "^7.10.3",
+    "eslint": "^7.3.1",
+    "husky": "^4.2.5",
+    "jest": "^26.1.0",
+    "lint-staged": "^10.2.11",
+    "nodemon": "^2.0.4",
+    "prettier": "^2.0.5"
+  },
+  "dependencies": {
+    "axios": "^0.19.2",
+    "cookie-parser": "^1.4.5",
+    "cors": "^2.8.5",
+    "csvtojson": "^2.0.10",
+    "esm": "^3.2.25",
+    "express": "^4.17.1",
+    "express-pino-logger": "^5.0.0",
+    "http-errors": "^1.7.3",
+    "js": "^0.1.0",
+    "pino": "^6.3.2",
+    "pino-pretty": "^4.0.0",
+    "swagger-ui-express": "^4.1.4",
+    "yaml": "^1.10.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": "eslint --cache --fix",
+    "*.+(js|json)": "prettier --write"
+  }
+}
