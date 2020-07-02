@@ -23,11 +23,11 @@ describe('Get all currency exchange rates', () => {
   });
 });
 
-describe('Expect non empty list of 32 for all currency exchange rates', () => {
+describe('Expect non empty list of  140 for all currency exchange rates', () => {
   it('should return all 3 letter country codes with currency for the day', async () => {
     jest.spyOn(axios, 'get').mockResolvedValueOnce(ratesMock);
     const data = await getCurrencyExchangeRates();
-    expect(Object.keys(data.rates)).toHaveLength(32);
+    expect(Object.keys(data.rates)).toHaveLength(140);
   });
 });
 

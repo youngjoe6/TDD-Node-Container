@@ -1,3 +1,3 @@
 module.exports = {
-  testMatch: ['<rootDir>/src/**/?(*.)test.js'],
+  testMatch: ['**/__tests__/**/*.[jt]s?(x)', '**/?(*.)+(spec|test).[jt]s?(x)'],
 };

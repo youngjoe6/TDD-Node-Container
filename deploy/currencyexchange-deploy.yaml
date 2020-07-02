@@ -21,7 +21,7 @@ spec:
             - name: SCHEME
               value: <SCHEME>
           ports:
-            - containerPort: 4001
+            - containerPort:
 
 ---
 apiVersion: v1
