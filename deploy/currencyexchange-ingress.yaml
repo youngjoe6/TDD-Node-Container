@@ -12,7 +12,7 @@ spec:
       secretName: <INGRESS_SECRET>
   backend:
     serviceName: currencyexchange-service
-    servicePort: 4001
+    servicePort: 2020
   rules:
     - host: <INGRESS_SUBDOMAIN>
       http:
@@ -20,4 +20,4 @@ spec:
           - path: /
             backend:
               serviceName: currencyexchange-service
-              servicePort: 4001
+              servicePort: 2020

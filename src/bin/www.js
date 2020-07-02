@@ -11,7 +11,7 @@ import { createServer } from 'http';
  * Get port from environment and store in Express.
  */
 
-var port = normalizePort(process.env.PORT || '4001');
+var port = normalizePort(process.env.PORT || '2020');
 app.set('port', port);
 
 /**

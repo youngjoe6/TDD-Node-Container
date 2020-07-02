@@ -13,7 +13,7 @@ import currencyRouter from './routes/currency';
 import NotFoundError from './errors/NotFoundError';
 
 var swaggerDocument = yaml.load('swagger.yaml');
-swaggerDocument.host = process.env.HOST_IP || 'localhost:4001';
+swaggerDocument.host = process.env.HOST_IP || 'localhost:2020';
 var scheme = process.env.SCHEME || 'http';
 swaggerDocument.schemes = [scheme];
 
@@ -37,14 +37,14 @@ app.use(api + '/currency', currencyRouter);
 app.use('/', serve, setup(swaggerDocument));
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
   next(createError(404));
 });
 
 // error handler
 // it must have 4 parameters for Express to know that this is an error middleware
 // eslint-disable-next-line no-unused-vars
-app.use(function(err, req, res, next) {
+app.use(function (err, req, res, next) {
   logger.error(err);
   if (err instanceof NotFoundError) {
     return res.status(404).json({ error: err.message });
@@ -57,7 +57,7 @@ app.use(function(err, req, res, next) {
   return res.sendStatus(err.status || 500);
 });
 
-process.on('unhandledRejection', error => {
+process.on('unhandledRejection', (error) => {
   console.error('unhandledRejection', error.message);
 });
 

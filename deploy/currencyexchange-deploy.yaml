@@ -21,7 +21,7 @@ spec:
             - name: SCHEME
               value: <SCHEME>
           ports:
-            - containerPort:
+            - containerPort: 2020
 
 ---
 apiVersion: v1
@@ -30,8 +30,8 @@ metadata:
   name: currencyexchange-service
 spec:
   ports:
-    - port: 4001
-      targetPort: 4001
+    - port: 2020
+      targetPort: 2020
       nodePort: 32001
       name: http
   type: NodePort
