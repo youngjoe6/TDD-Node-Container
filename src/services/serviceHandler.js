@@ -4,7 +4,7 @@
  */
 import axios from 'axios';
 import NotFoundError from '../errors/NotFoundError';
-export const BASE_URL_ENDPOINT = 'https://api.exchangeratesapi.io/';
+export const BASE_URL_ENDPOINT = 'https://api.exchangerate.host/';
 
 async function getCurrencyExchangeRate(
   countryCurrencyCode,
@@ -14,7 +14,7 @@ async function getCurrencyExchangeRate(
   countryCurrencyCode = countryCurrencyCode.toUpperCase();
   baseCode = baseCode.toUpperCase();
   if (countryCurrencyCode) {
-    var currencyUrl = `${BASE_URL_ENDPOINT}${timeIndicator}?base=${baseCode}`;
+    var currencyUrl = `${BASE_URL_ENDPOINT} ${timeIndicator}?base=${baseCode}`;
 
     try {
       const { data } = await axios.get(currencyUrl);
@@ -41,7 +41,7 @@ async function getCurrencyExchangeRate(
 }
 
 async function getCurrencyExchangeRates(timeIndicator = 'latest') {
-  const currencyUrl = `${BASE_URL_ENDPOINT}${timeIndicator}`;
+  const currencyUrl = `${BASE_URL_ENDPOINT} ${timeIndicator}`;
   const { data } = await axios.get(currencyUrl);
   return data;
 }

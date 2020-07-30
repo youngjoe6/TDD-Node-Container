@@ -6,14 +6,27 @@ import { Router } from 'express';
 import asyncMiddleware from '../middlewares/asyncMiddleware';
 import * as countryCurrencyCodeHandler from '../services/countryCurrencyCodeHandler';
 import { getCurrencyExchangeRates, convertCurrency } from '../services/serviceHandler';
+const ppp = require('../POVcounts/ppp.json');
 
 var router = Router();
 
-/* GET list of currency locations */
+/* GET list of locations */
 router.get(
   '/',
   asyncMiddleware(async (req, res) => {
     const data = await getCurrencyExchangeRates();
+    res.json(data);
+  })
+);
+
+/* GET 
+/PPP-NET:
+/Poverty rates
+*/
+router.get(
+  '/PPP-NET',
+  asyncMiddleware(async (req, res) => {
+    const data = await ppp;
     res.json(data);
   })
 );
